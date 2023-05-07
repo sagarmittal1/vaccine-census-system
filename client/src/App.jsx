@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import { Box, Button, Flex, Text } from '@chakra-ui/react';
 import NewPerson from './components/NewPersonModal';
-import { Button } from '@chakra-ui/react';
+import CensusTable from './components/CensusTable';
 
 const App = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,12 +15,23 @@ const App = () => {
   };
 
   return (
-    <div>
-      <Button colorScheme="teal" onClick={openModal}>
-        Add User
-      </Button>
+    <Box height='100vh'>
+      <Flex
+        h={16}
+        bg="gray.100"
+        alignItems="center"
+        justifyContent="space-between"
+        px={4}
+      >
+        <Text fontSize="2xl">Census System & Trend Analysis</Text>
+        <Button colorScheme="teal" onClick={openModal}>
+          Add User
+        </Button>
+      </Flex>
       <NewPerson isOpen={isOpen} onClose={closeModal} />
-    </div>
+
+      <CensusTable />
+    </Box>
   );
 };
 

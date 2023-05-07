@@ -53,6 +53,8 @@ const NewPerson = ({ isOpen, onClose }) => {
           isClosable: false,
         });
       }
+
+      onClose();
     } catch (err) {
       console.log(err.message);
     }
