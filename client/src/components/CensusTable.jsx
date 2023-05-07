@@ -15,7 +15,7 @@ const CensusTable = () => {
       const data = fetchedData.map((person) => ({
         name: person.fullname,
         gender: person.gender,
-        birthdate: Date(person.birthdate).substring(0, 15),
+        birthdate: person.birthdate.substring(0, 10),
         is_vaccinated: person.is_vaccinated === true ? 'Yes' : 'No',
       }));
 
