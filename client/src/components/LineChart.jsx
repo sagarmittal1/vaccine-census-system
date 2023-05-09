@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Box, Radio, RadioGroup, Stack } from '@chakra-ui/react';
+import { Box, Center, Radio, RadioGroup, Stack } from '@chakra-ui/react';
 import { Line } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
@@ -88,19 +88,20 @@ const LineChart = () => {
           choice === 'vaccinated'
             ? 'rgba(255, 99, 132, 0.5)'
             : 'rgba(53, 162, 235, 0.5)',
-        xAxisID: 'Age',
       },
     ],
   };
 
   return (
-    <Box>
-      <RadioGroup defaultValue="vaccinated" onChange={(e) => setChoice(e)}>
-        <Stack direction="row" spacing="4">
-          <Radio value="vaccinated">Vaccinated</Radio>
-          <Radio value="unvaccinated">Unvaccinated</Radio>
-        </Stack>
-      </RadioGroup>
+    <Box mt={2}>
+      <Center>
+        <RadioGroup defaultValue="vaccinated" onChange={(e) => setChoice(e)}>
+          <Stack direction="row" spacing="4">
+            <Radio value="vaccinated">Vaccinated</Radio>
+            <Radio value="unvaccinated">Unvaccinated</Radio>
+          </Stack>
+        </RadioGroup>
+      </Center>
       <Line data={data} options={options} />
     </Box>
   );

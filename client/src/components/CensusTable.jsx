@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Box } from '@chakra-ui/react';
 import ReactDataGrid from '@inovua/reactdatagrid-community';
 import '@inovua/reactdatagrid-community/index.css';
 
@@ -51,14 +50,12 @@ const CensusTable = () => {
   const gridStyle = { marginTop: 10, minHeight: 650 };
 
   return (
-    <Box w={600}>
-      <ReactDataGrid
-        idProperty="id"
-        columns={columns}
-        dataSource={censusData}
-        style={gridStyle}
-      />
-    </Box>
+    <ReactDataGrid
+      idProperty="id"
+      columns={columns}
+      dataSource={censusData}
+      style={gridStyle}
+    />
   );
 };
 

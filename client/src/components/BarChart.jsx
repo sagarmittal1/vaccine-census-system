@@ -96,7 +96,7 @@ const BarChart = () => {
   };
 
   return (
-    <Box>
+    <Box h={350} w={500}>
       <Bar options={options} data={data} />
     </Box>
   );
