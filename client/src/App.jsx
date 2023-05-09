@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Box, Button, Flex, Text } from '@chakra-ui/react';
 import NewPerson from './components/NewPersonModal';
 import CensusTable from './components/CensusTable';
+import LineChart from './components/LineChart';
 
 const App = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,7 +16,7 @@ const App = () => {
   };
 
   return (
-    <Box height='100vh'>
+    <Box height="100vh">
       <Flex
         h={16}
         bg="gray.100"
@@ -30,7 +31,13 @@ const App = () => {
       </Flex>
       <NewPerson isOpen={isOpen} onClose={closeModal} />
 
-      <CensusTable />
+      <Flex>
+        <CensusTable />
+
+        <Box height={600} width={700}>
+          <LineChart />
+        </Box>
+      </Flex>
     </Box>
   );
 };
