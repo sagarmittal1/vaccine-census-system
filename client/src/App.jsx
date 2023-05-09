@@ -3,6 +3,7 @@ import { Box, Button, Flex, Text } from '@chakra-ui/react';
 import NewPerson from './components/NewPersonModal';
 import CensusTable from './components/CensusTable';
 import LineChart from './components/LineChart';
+import BarChart from './components/BarChart';
 
 const App = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,9 +35,15 @@ const App = () => {
       <Flex>
         <CensusTable />
 
-        <Box height={600} width={700}>
-          <LineChart />
-        </Box>
+        <Flex flexDirection="column">
+          <Box height={500} width={600}>
+            <LineChart />
+          </Box>
+
+          <Box height={500} width={600}>
+            <BarChart />
+          </Box>
+        </Flex>
       </Flex>
     </Box>
   );

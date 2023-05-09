@@ -83,6 +83,62 @@ app.get('/counts', async (req, res) => {
   }
 });
 
+// Bar Chart API
+app.get('/results', async (req, res) => {
+  try {
+    const allPersons = await pool.query('SELECT * FROM people');
+    const fetchedData = allPersons.rows.map((person) => ({
+      age: calculateAge(person.birthdate),
+      gender: person.gender,
+    }));
+
+    let labels = [];
+    const genderData = [];
+
+    fetchedData.map((person) => {
+      labels.push(person.age);
+    });
+
+    labels = labels.filter(
+      (value, index, self) => self.indexOf(value) === index
+    );
+    labels.sort(function (a, b) {
+      if (a > b) return 1;
+      if (a < b) return -1;
+      return 0;
+    });
+
+    for (let i = 0; i < labels.length; i++) {
+      const male = fetchedData.filter((person) => {
+        return person.age === labels[i] && person.gender === 'male';
+      }).length;
+      const female = fetchedData.filter((person) => {
+        return person.age === labels[i] && person.gender === 'female';
+      }).length;
+      const other = fetchedData.filter((person) => {
+        return person.age === labels[i] && person.gender === 'other';
+      }).length;
+
+      const evalData = {
+        age: labels[i],
+        male,
+        female,
+        other,
+      };
+      genderData.push(evalData);
+    }
+
+    const data = {
+      labels,
+      genderData,
+    };
+
+    res.json(data);
+  } catch (err) {
+    console.error(err.message);
+  }
+});
+
 app.listen(5000, () => {
   console.log('Server has started on port 5000');
 });
