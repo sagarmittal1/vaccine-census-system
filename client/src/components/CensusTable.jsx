@@ -55,6 +55,8 @@ const CensusTable = ({ refresh }) => {
       columns={columns}
       dataSource={censusData}
       style={gridStyle}
+      pagination
+      defaultLimit={15}
     />
   );
 };
