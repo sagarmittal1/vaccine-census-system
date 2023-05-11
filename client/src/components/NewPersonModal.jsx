@@ -18,7 +18,7 @@ import {
   useToast,
 } from '@chakra-ui/react';
 
-const NewPerson = ({ isOpen, onClose }) => {
+const NewPerson = ({ isOpen, onClose, refreshHandler }) => {
   const toast = useToast();
   const [isMobile] = useMediaQuery('(max-width: 768px)');
 
@@ -53,6 +53,8 @@ const NewPerson = ({ isOpen, onClose }) => {
           isClosable: false,
         });
       }
+
+      refreshHandler();
 
       onClose();
     } catch (err) {

@@ -8,6 +8,11 @@ import BarChart from './components/BarChart';
 const App = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile] = useMediaQuery('(max-width: 768px)');
+  const [refresh, setRefresh] = useState(false);
+
+  const refreshHandler = () => {
+    setRefresh(!refresh);
+  };
 
   const openModal = () => {
     setIsOpen(true);
@@ -31,7 +36,11 @@ const App = () => {
           Add User
         </Button>
       </Flex>
-      <NewPerson isOpen={isOpen} onClose={closeModal} />
+      <NewPerson
+        isOpen={isOpen}
+        onClose={closeModal}
+        refreshHandler={refreshHandler}
+      />
 
       <Flex
         justifyContent="center"
@@ -39,12 +48,12 @@ const App = () => {
         flexDirection={isMobile ? 'column' : 'row'}
       >
         <Box width="600px">
-          <CensusTable />
+          <CensusTable refresh={refresh} />
         </Box>
 
         <Flex flexDirection="column" gap={5}>
-          <LineChart />
-          <BarChart />
+          <LineChart refresh={refresh} />
+          <BarChart refresh={refresh} />
         </Flex>
       </Flex>
     </Box>

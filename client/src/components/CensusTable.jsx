@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ReactDataGrid from '@inovua/reactdatagrid-community';
 import '@inovua/reactdatagrid-community/index.css';
 
-const CensusTable = () => {
+const CensusTable = ({ refresh }) => {
   const [censusData, setCensusData] = useState([]);
 
   const getCensus = async () => {
@@ -26,7 +26,7 @@ const CensusTable = () => {
 
   useEffect(() => {
     getCensus();
-  }, []);
+  }, [refresh]);
 
   const columns = [
     {

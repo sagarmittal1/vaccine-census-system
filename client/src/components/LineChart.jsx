@@ -22,7 +22,7 @@ ChartJS.register(
   Legend
 );
 
-const LineChart = () => {
+const LineChart = ({ refresh }) => {
   const [choice, setChoice] = useState('vaccinated');
   const [chartData, setChartData] = useState([]);
   const [labels, setLabels] = useState([]);
@@ -47,7 +47,7 @@ const LineChart = () => {
 
   useEffect(() => {
     getChartData(choice);
-  }, [choice]);
+  }, [choice, refresh]);
 
   const options = {
     responsive: true,
@@ -60,6 +60,7 @@ const LineChart = () => {
         text: 'Number of vaccinated / unvaccinated people vs age',
       },
     },
+    tension: 0.4,
     scales: {
       x: {
         title: {

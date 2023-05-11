@@ -20,7 +20,7 @@ ChartJS.register(
   Legend
 );
 
-const BarChart = () => {
+const BarChart = ({refresh}) => {
   const [labels, setLabels] = useState([]);
   const [maleData, setMaleData] = useState([]);
   const [femaleData, setFemaleData] = useState([]);
@@ -45,7 +45,7 @@ const BarChart = () => {
 
   useEffect(() => {
     getChartData();
-  }, []);
+  }, [refresh]);
 
   const options = {
     responsive: true,
