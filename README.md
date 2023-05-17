@@ -41,3 +41,11 @@ CREATE TABLE people(
 ```
 
 Then in open [server -> db.js](./server/db.js) & change user & password to your credentials.
+
+## Demo
+
+![Screenshot (21)](https://github.com/sagarmittal1/vaccine-census-system/assets/54253848/3b341862-432c-42a5-a0d6-728fd794ae9d)
+
+![Screenshot (22)](https://github.com/sagarmittal1/vaccine-census-system/assets/54253848/6db0d1e1-29ca-42bb-8da9-19064c2412fd)
+
+https://github.com/sagarmittal1/vaccine-census-system/assets/54253848/3a66cd52-fdab-48bf-8bf2-734d959c3690
