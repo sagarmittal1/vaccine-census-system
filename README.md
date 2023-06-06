@@ -44,8 +44,8 @@ Then in open [server -> db.js](./server/db.js) & change user & password to your 
 
 ## Demo
 
-![Screenshot (21)](https://github.com/sagarmittal1/vaccine-census-system/assets/54253848/3b341862-432c-42a5-a0d6-728fd794ae9d)
+![Screenshot 1](/client/public/screenshot_1.png)
 
-![Screenshot (22)](https://github.com/sagarmittal1/vaccine-census-system/assets/54253848/6db0d1e1-29ca-42bb-8da9-19064c2412fd)
+![Screenshot 2](/client/public/screenshot_2.png)
 
-https://github.com/sagarmittal1/vaccine-census-system/assets/54253848/3a66cd52-fdab-48bf-8bf2-734d959c3690
+[![Census System and Trend Analysis](https://res.cloudinary.com/marcomontalbano/image/upload/v1686075630/video_to_markdown/images/youtube--Kux9kbj6PH0-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://youtu.be/Kux9kbj6PH0 'Census System and Trend Analysis')
